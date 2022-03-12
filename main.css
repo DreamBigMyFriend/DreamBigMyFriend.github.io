@@ -36,6 +36,11 @@ section {
   margin: auto;
 }
 
+.picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /*-----------------*/
 
 .wrapper {

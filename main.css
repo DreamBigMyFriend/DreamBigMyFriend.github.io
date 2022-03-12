@@ -43,6 +43,8 @@ html{
 
 .picture {
   height: 100px;
+  padding: 10px;
+  margin: 10px;
 }
 
 @media (max-width: 720px) {

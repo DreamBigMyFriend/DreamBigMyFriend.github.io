@@ -169,6 +169,9 @@ footer {
   .socials a {
     color: #65c18c;
   }
+  .links {
+    display: none;
+  }
 }
 
 .footer-logo {

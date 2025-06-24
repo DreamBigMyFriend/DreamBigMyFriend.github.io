@@ -118,6 +118,86 @@ body {
   transition: all 0.35s;
 }
 
+        *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 200ms ease-out;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  background: #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button {
+  isolation: isolate;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 48px;
+  border-radius: 9999rem;
+  background: transparent;
+  position: relative;
+  
+  & > .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    
+    &::before {
+      content: "";
+      width: 0;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+    }
+  }
+  
+  &:hover {
+    color: white;
+    
+    & > .back {
+      transform: scale(95%);
+      
+      &::before {
+        width: 120%;
+      }
+    }
+  }
+  
+  &:active {
+    & > .back {
+      transform: scale(90%);
+    }
+  }
+}
+
     </style>
     <title>Capstone</title>
 </head>
@@ -154,6 +234,11 @@ body {
     </div>
   </div>
 
+     <button class="button" onclick="window.location.href='env.html';">
+  <div class="back"></div>
+  <span class="text">Button</span>
+</button>
+     
 </div>
 </body>
 </html>
